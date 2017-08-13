@@ -96,13 +96,17 @@ export class AppComponent {
   title = 'app';
 
   state: String = 'active';
-  stateN: String = '';
+  lista: String[] = [];
 
   toggleState() {
     this.state = (this.state === 'active' ? 'inactive' : 'active');
   }
 
-  toggleStateN() {
-    this.stateN = (this.state === '' ? 'in' : '');
+  addItemLista() {
+    this.lista.push('item - ' + this.lista.length);
+  }
+
+  rmItemLista() {
+    this.lista.splice(this.lista.length -1, 1);
   }
 }
