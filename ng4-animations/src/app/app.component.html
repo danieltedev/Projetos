@@ -1,3 +1,23 @@
+<div class="container">
+  <a class="waves-effect waves-light deep-purple btn" (click)="addItemLista()">
+    <i class="fa fa-plus" aria-hidden="true"></i>
+    <span>Adicionar</span>
+  </a>
+  <a class="waves-effect waves-light purple btn" (click)="rmItemLista()">
+      <i class="fa fa-minus" aria-hidden="true"></i>
+      <span>Remover</span>
+  </a>
+  <div class="row">
+    <div class="col s3 m3 l3">
+      <ul class="collection" *ngIf="!listaVazia()" [@mostrarsaida]="state">
+        <li class="collection-item" [@chaqualharsair]="'in'" *ngFor="let item of lista">
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
@@ -17,35 +37,5 @@
     <h2><a target="_blank" href="https://blog.angular.io//">Angular blog</a></h2>
   </li>
 </ul>
-
-<div class="container">
-  <div class="row">
-    <div class="col s3 m3 l3">
-      <a class="waves-effect waves-light deep-purple btn"
-        (click)="addItemLista()">
-        <i class="fa fa-plus" aria-hidden="true"></i>
-        Adicionar
-      </a>
-    </div>
-    <div class="col s3 m3 l3">
-      <a class="waves-effect waves-light purple btn"
-        (click)="rmItemLista()">
-        <i class="fa fa-minus" aria-hidden="true"></i>
-        Remover
-      </a>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col s3 m3 l3">
-      <ul class="collection" *ngIf="lista.length > 0">
-        <li class="collection-item"
-          [@chaqualharsair]="'in'"
-          *ngFor="let item of lista">
-          {{ item }}
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
 
 <router-outlet></router-outlet>

@@ -88,6 +88,10 @@ import { trigger, state, style, animate, transition } from "@angular/animations"
       transition('* => void', [
         style({ height: '*' }),
         animate(250, style({ height: 0 }))
+      ]),
+      transition('void => *', [
+        style({ height: 0 }),
+        animate(250, style({ height: '*' }))
       ])
     ])
   ]
@@ -104,9 +108,19 @@ export class AppComponent {
 
   addItemLista() {
     this.lista.push('item - ' + this.lista.length);
+    this.listaVazia();
   }
 
   rmItemLista() {
     this.lista.splice(this.lista.length -1, 1);
+    this.listaVazia();
+  }
+
+  listaVazia(): Boolean {
+    return this.lista.length == 0;
+  }
+
+  esconderLista() {
+    this.state = this.listaVazia() ? 'inactive' : 'active';
   }
 }
