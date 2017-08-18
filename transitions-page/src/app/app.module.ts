@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { ContatoComponent } from './contato/contato.component';
 import { LoginComponent } from './login/login.component';
 import { RecursosComponent } from './recursos/recursos.component';
+import { OnScrollService } from "./shared/on-scroll.service";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { RecursosComponent } from './recursos/recursos.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    OnScrollService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
