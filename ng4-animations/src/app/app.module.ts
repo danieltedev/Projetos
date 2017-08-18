@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AnimationComponent } from './animation/animation.component';
+import { OnScrollService } from "./on-scroll.service";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { AnimationComponent } from './animation/animation.component';
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [OnScrollService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
